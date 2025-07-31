@@ -1,1 +1,3 @@
 table-multiplication.txt
+# jadi sistem .gitignore hanya mengabaikan file yang akan disimpan
+# berbeda dengan file yang telah dimasukkan ke commit
