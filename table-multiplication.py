@@ -1,10 +1,10 @@
 """
-Proyek Tabel perkalian
-Dibuat oleh Fakhrul Hidayat
+Multiplication Table Project
+Created by Fakhrul Hidayat
 github: github.com/fakhrulhidayat33
-Versi 1.1 indent statis
-Versi 1.2 indent dinamis berdasearkan sel terbesar
-Veris 1.3 indent dinamis berdasarkan sel terbesar pada masing-masing kolom (sedang diproses)
+Version 1.1: Static indent
+Version 1.2: Dynamic indent based on the largest cell
+Version 1.3: Dynamic indent based on the largest cell in each column (in progress)
 """
 def center(text: str, indent: int) -> str:
     main = len(text)
@@ -18,40 +18,45 @@ def border_line(line: str, indent: int, n_col: int) -> str:
 
 def table_multiply(n_row: int, n_col: int) -> bool:
     """
-    n_row: banyak baris
-    n_col: banyak kolom
+    n_row: number of rows
+    n_col: number of columns
     """
     dummy = f" {n_row} x {n_col} = {n_row * n_col} "
     indent = len(dummy)
 
-    with open("table-multiplication.txt", "w") as file:
+    with open("table-multiplication.txt", "w") as f1, open(f"table_{n_row}x{n_col}.txt", "w") as f2:
     
-        # menambahkan garis baris pertama (head)
-        file.write(border_line("=", indent, n_col))
-        
-        # menambahkan baris pertama (head)
+        # create the first line (header border)
+        text = border_line("=", indent, n_col)
+
+        # create the first row (header row)
         lines = "||" + " " * indent + "||"
         for j in range(1, n_col + 1):
             lines += center(str(j), indent) + "|"
         lines += "|\n"
-        file.write(lines)
+        text += lines
 
-        # menambahkan garis pembatas antara head dan body tabel
-        file.write(border_line("=", indent, n_col))
+        # create a border line between header and body
+        text += border_line("=", indent, n_col)
 
-        # menambahkan baris selanjutnya beserta pembatasnya
+        # create the following rows with their borders
         for i in range(1, n_row + 1):
             lines = "||" + center(str(i), indent) + "||"
+            
             for j in range(1, n_col + 1):
                 lines += center(f"{i} x {j} = {i * j}", indent) + "|"
             lines += "|\n"
-            file.write(lines)
+            text += lines
+            
             border = "=" if i == n_row else "-"
-            file.write(border_line(border, indent, n_col))
+            text += border_line(border, indent, n_col)
+        
+        f1.write(text)
+        f2.write(text)
 
     return True
 
 if __name__ == "__main__":    
-    n_row = int(input("Berikan nilai terbesar operanda pertama: "))
-    n_col = int(input("Berikan nilai terbesar operanda kedua: "))
+    n_row = int(input("Enter the maximum value for the first operand: "))
+    n_col = int(input("Enter the maximum value for the second operand: "))
     table_multiply(n_row, n_col)

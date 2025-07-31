@@ -18,56 +18,52 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
   - ~~Count vowels in a string~~
   - ~~Sort a list of numbers~~
 
+**Example Script:**  
+- [table-multiplication.py](table-multiplication.py)  
+- [table-multiplication.txt](table-multiplication.txt) *(sample output)*
+
+**About the Script:**  
+- Generates a multiplication table from **1×1 up to N×M**.  
+- Uses **dynamic indent** to format the table neatly.  
+- Outputs the table to a `.txt` file.  
+- Current version: **1.2**  
+  - 1.1 → Static indent  
+  - 1.2 → Dynamic indent based on largest cell  
+  - 1.3 → *(Planned)* Dynamic indent per column
+
 ---
 
 ## **Stage 2: Build Small Projects**
 
 **Goal:** Move from theory to small practical projects (50–200 lines).
 
-**Indicators:**
-- [ ] I can start and finish a small project without giving up.
-- [ ] I can debug errors with AI help and understand the fix.
-- [ ] I can modify AI-generated scripts to suit my needs.
-- [ ] I’ve built at least one project like:
-  - File renamer for 100+ files
-  - Simple CSV-based expense tracker
+**Planned Next Steps:**
+- [v] Create multiple multiplication tables in one run.  
+- [v] Save files with dynamic filenames, e.g., `table_10x5.txt`.  
+- ~~ (Optional) Export a CSV version for real-world usage.  ~~
+- [v] Start building my first **small project** combining input, file handling, and logic.
 
 ---
 
 ## **Stage 3: Automation & Data Skills**
 
-**Goal:** Handle real-world tasks involving data and automation.
-
-**Indicators:**
-- [ ] I can read and write CSV/Excel/JSON files with Python.
-- [ ] I can scrape or fetch data from the web.
-- [ ] I can automate repetitive tasks for myself or others.
-- [ ] I can combine 2–3 skills in one script, e.g.:
-  - Scrape website data → Save to Excel → Clean the data automatically
+- Coming soon.  
+- Will focus on **CSV/Excel handling**, **web scraping**, and **task automation**.
 
 ---
 
 ## **Stage 4: AI + Human Synergy**
 
-**Goal:** Use AI as a coding partner to build real-world solutions.
-
-**Indicators:**
-- [ ] I can plan a project from problem to solution before writing code.
-- [ ] I use AI as an assistant, not a crutch—I understand and adapt its code.
-- [ ] I can deliver real-world value, like a script that saves hours of work.
-- [ ] I can optimize or extend AI-generated code without breaking it.
+- Coming soon.  
+- Will focus on **building useful tools** using **AI-assisted coding**.
 
 ---
 
-### ✅ How to Use This README
-1. **Check off each indicator** as you achieve it.
-2. **Move to the next stage** only when all indicators are checked.
-3. **Optional:** Add links to your finished projects under each stage.
+### ✅ How I Use This Repo
+1. **Track my progress** through the stages.  
+2. **Check off indicators** as I gain new skills.  
+3. **Show my learning journey** with both code and documentation.  
 
 ---
 
 Happy coding and growing with AI 🚀
-
-### Current Progress
-- Stage 1: 4/4 indicators completed
-- Example Script: [table-multiplication.py](table-multiplication.py)
