@@ -3,6 +3,8 @@ Proyek Tabel perkalian
 Dibuat oleh Fakhrul Hidayat
 github: github.com/fakhrulhidayat33
 Versi 1.1 indent statis
+Versi 1.2 indent dinamis berdasearkan sel terbesar
+Veris 1.3 indent dinamis berdasarkan sel terbesar pada masing-masing kolom (sedang diproses)
 """
 def center(text: str, indent: int) -> str:
     main = len(text)
