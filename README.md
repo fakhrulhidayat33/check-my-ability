@@ -10,13 +10,13 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 **Goal:** Build a strong foundation in programming logic and basic Python.
 
 **Indicators:**
-- [ ] I can write simple Python scripts without copying from AI.
-- [ ] I understand variables, loops, and conditions enough to predict code outputs.
-- [ ] I can read AI-generated code and explain what each line does.
-- [ ] I can solve basic problems like:
-  - Generate a multiplication table
-  - Count vowels in a string
-  - Sort a list of numbers
+- [v] I can write simple Python scripts without copying from AI.
+- [v] I understand variables, loops, and conditions enough to predict code outputs.
+- [v] I can read AI-generated code and explain what each line does.
+- [v] I can solve basic problems like:
+  - **Generate a multiplication table**
+  - ~~Count vowels in a string~~
+  - ~~Sort a list of numbers~~
 
 ---
 
@@ -67,3 +67,7 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 ---
 
 Happy coding and growing with AI 🚀
+
+### Current Progress
+- Stage 1: 4/4 indicators completed
+- Example Script: [table-multiplication.py](table-multiplication.py)
