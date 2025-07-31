@@ -40,7 +40,7 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 **Planned Next Steps:**
 - [v] Create multiple multiplication tables in one run.  
 - [v] Save files with dynamic filenames, e.g., `table_10x5.txt`.  
-- ~~ (Optional) Export a CSV version for real-world usage.  ~~
+- [v] Export a CSV version for real-world usage.  
 - [v] Start building my first **small project** combining input, file handling, and logic.
 
 ---
