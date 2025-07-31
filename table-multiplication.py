@@ -21,7 +21,8 @@ def table_multiply(n_row: int, n_col: int) -> bool:
     n_row: banyak baris
     n_col: banyak kolom
     """
-    indent = 15
+    dummy = f" {n_row} x {n_col} = {n_row * n_col} "
+    indent = len(dummy)
 
     with open("table-multiplication.txt", "w") as file:
     
