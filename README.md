@@ -43,6 +43,20 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 - [v] Export a CSV version for real-world usage.  
 - [v] Start building my first **small project** combining input, file handling, and logic.
 
+### Stage 2.5: Small Project - Multiplication Table CLI Tool
+
+- [ ] CLI interface for rows/columns and output format selection  
+- [v] Flexible output: text, CSV, or both  
+- [ ] CSV export uses `csv.writer` with headers  
+- [v] Dynamic, descriptive filenames  
+- [ ] Input validation with clear error messages  
+- [ ] Logging or status feedback on run  
+- [ ] Defaults if no arguments provided  
+- [ ] Self-test or example mode  
+- [ ] Clean function separation (generate, write_text, write_csv, main)  
+- [ ] Usage example documented in README  
+- [ ] (Optional) Basic automated test for correctness
+
 ---
 
 ## **Stage 3: Automation & Data Skills**
