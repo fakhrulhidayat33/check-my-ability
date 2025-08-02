@@ -65,15 +65,35 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 
 ## **Stage 3: Automation & Data Skills**
 
-- Coming soon.  
-- Will focus on **CSV/Excel handling**, **web scraping**, and **task automation**.
+**Goal:** Handle real-world data and automate tasks.
+
+**Planned Next Steps:**
+- [ ] Read and write CSV files with Python's csv module
+- [ ] Read and write Excel files with openpyxl or pandas
+- [ ] Clean and transform data (remove duplicates, fix formats)
+- [ ] Merge multiple CSV/Excel files into one dataset
+- [ ] Fetch data from the web using requests
+- [ ] Parse HTML using BeautifulSoup or lxml
+- [ ] Automate repetitive file tasks (rename, move, delete files)
+- [ ] Schedule scripts to run automatically (cron/Task Scheduler)
+- [ ] Create a script that combines data fetching, processing, and saving
+- [ ] Document how to run the automation script
 
 ---
 
 ## **Stage 4: AI + Human Synergy**
 
-- Coming soon.  
-- Will focus on **building useful tools** using **AI-assisted coding**.
+**Goal:** Build useful tools that combine automation and AI assistance.
+
+**Planned Next Steps:**
+- [ ] Learn how to use an AI API (OpenAI, Hugging Face, etc.)
+- [ ] Integrate AI into a Python script to process or generate text
+- [ ] Combine Stage 3 automation with AI features
+- [ ] Build a CLI, GUI, or web interface for a tool
+- [ ] Package the tool so others can use it easily
+- [ ] Create a project that solves a real-world problem end-to-end
+- [ ] Document the project in README.md with examples and instructions
+- [ ] Share the project on GitHub or another platform
 
 ---
 
