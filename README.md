@@ -5,6 +5,10 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 
 ---
 
+## Example Usage
+1) Run `table-multiplication.py` (uses default settings).  
+2) Run `table-multiplication.py -r 5` (sets the number of rows to 5; number of columns still uses default settings ).  
+
 ## **Stage 1: Fundamentals**
 
 **Goal:** Build a strong foundation in programming logic and basic Python.
@@ -45,17 +49,17 @@ It is divided into **4 stages**, each with **clear indicators** to track your pr
 
 ### Stage 2.5: Small Project - Multiplication Table CLI Tool
 
-- [ ] CLI interface for rows/columns and output format selection  
+- [v] CLI interface for rows/columns and output format selection  
 - [v] Flexible output: text, CSV, or both  
-- [ ] CSV export uses `csv.writer` with headers  
+- [v] CSV export uses `csv.writer` with headers  
 - [v] Dynamic, descriptive filenames  
-- [ ] Input validation with clear error messages  
-- [ ] Logging or status feedback on run  
-- [ ] Defaults if no arguments provided  
-- [ ] Self-test or example mode  
-- [ ] Clean function separation (generate, write_text, write_csv, main)  
-- [ ] Usage example documented in README  
-- [ ] (Optional) Basic automated test for correctness
+- [v] Input validation with clear error messages  
+- [v] Logging or status feedback on run  
+- [v] Defaults if no arguments provided  
+- [v] Self-test or example mode
+- [v] Clean function separation (generate, write_text, write_csv, main)  
+- [v] Usage example documented in README  
+- [?] (Optional) Basic automated test for correctness
 
 ---
 
