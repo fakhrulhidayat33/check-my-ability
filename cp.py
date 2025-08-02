@@ -1,4 +1,5 @@
 import re
+from datetime import datetime 
 
 with open("README.md") as f:
     lines = f.readlines()
@@ -11,13 +12,16 @@ x = re.search("^The.*Spain$", txt)
 for line in lines:
     if re.search(r"^## \*\*Stage", line):
         head = line
-    elif re.search(r"^?(\- \[ \])", line):
+    elif re.search(r"^\- \[ \]", line):
         if head != None:
             break
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(f"====== {timestamp} ==========")
 print("You are in: ")
 print(head)
 print("Your current task is")
 print(line)
+print("================")
 
 # data = dir(re)
 # stoper = 1
