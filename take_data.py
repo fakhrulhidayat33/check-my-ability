@@ -1,4 +1,5 @@
 """
+# project.co.id tidak menyertakan robot.txt serta tidak ada term and condition yang tertera
 [x] Tahap ke-1: menggunakan sistem paling dasar
 [v] Tahap ke-2: tambahkan header => tidak perlu pakai selenium
 """
