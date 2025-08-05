@@ -20,13 +20,14 @@ sistem yang ada mirip seperti sistem first in last out
 from datetime import datetime
 
 def debug(i, text, head, level):
-    stop = input(f"{text}\n ")
-    print(f"** {i} *********")
-    print(f"level = {level}")
-    print(f"head = {head}")
-    if stop == "q":
-        return True
-    return False
+    # stop = input(f"{text}\n ")
+    # print(f"** {i} *********")
+    # print(f"level = {level}")
+    # print(f"head = {head}")
+    # if stop == "q":
+    #     return True
+    # return False
+    pass
 
 test = "<!DOCTYPE html><html><head><title>One Line</title></head><body><h1>Hello World</h1></body></html>"
 
