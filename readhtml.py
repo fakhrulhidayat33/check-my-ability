@@ -25,25 +25,27 @@ part = ""
 for i in test:
     if start:
         if status == "go":
+            part = i
             if i == "<":
-                part += i
                 status = "ready"
                 tag = ""
             else:
                 status = "off"
-                part = i
         elif status == "ready":
             part += i
             if i == "/":
-                delete = True
+                if delete:
+                    level -= 1
+                else:
+                    delete = True
             elif i == " ":
-                assert not delete, "seharusnya tag ini bukan tag penutup"
+                delete = False
                 status = "set"
                 tag_list.append(tag)
             elif i == ">":
                 status = "go"
-                text += part
-                text += "\n"
+                text += part # benar
+                text += "\n" # benar
                 if delete:
                     tag_list.pop()
                     # assert tag == tag_list.pop(), f"seharusnya tag yang dikeluarkan sama dengan tag yang sedang diproses\n{text}"
