@@ -7,56 +7,95 @@ test = "<!DOCTYPE html><html><head><title>One Line</title></head><body><h1>Hello
 indent = 4
 level = 0
 
+print("===================================================")
+
 tag_list = []
 hide = ["br", "hr", "img", "input", "meta", "link", "source", "area", "col", "embed", "param", "base", "wbr"]
 forget = ["strong", "b", "em", "u", "q", "a", "small", "sup", "sub", "b", "ins", "del", "span", "abbr", "cite"]
 text = ""
 start = False
 # status ada A, B, C, D, E, F, G
+# status ready untuk pemeriksaan tag
+# status set untuk memasukkan parameter tag
+# status go untuk memasukkan konten
 delete = False
-status = "off"
+status = "go"
 tag = None
 part = ""
 for i in test:
     if start:
-        part += i
-        if i == "<":
-            status = "ready"
-            tag = ""
+        if status == "go":
+            if i == "<":
+                part += i
+                status = "ready"
+                tag = ""
+            else:
+                status = "off"
+                part = i
         elif status == "ready":
+            part += i
             if i == "/":
                 delete = True
             elif i == " ":
+                assert not delete, "seharusnya tag ini bukan tag penutup"
                 status = "set"
                 tag_list.append(tag)
             elif i == ">":
+                status = "go"
+                text += part
+                text += "\n"
                 if delete:
                     tag_list.pop()
+                    # assert tag == tag_list.pop(), f"seharusnya tag yang dikeluarkan sama dengan tag yang sedang diproses\n{text}"
+                    # tag_list.pop()
+                else:
+                    tag_list.append(tag)
+                    tag = ""
+                    level += 1
+                text += " " * indent * level
+                part = ""
+                # print("stop1")
+                # print(text)
+                # break
             else:
                 tag += i
             
-        elif status != "off" and i == ">":
-            status = "off"
-            if tag in forget:
-                pass
-            elif tag in hide:
-                print("masukkah?")
+        elif status == "set":
+            part += i
+            if i == ">":
+                status = "go"
+                if tag in forget:
+                    pass
+                elif tag in hide:
+                    print("masukkah?")
+                else:
+                    level += 1
+                text += part
                 text += "\n"
                 text += " " * indent * level
-            print("stop")
-            print(text)
-            break
-        elif status == "set":
-            if i == " ":
-                status = "go"
-                tag_list.append(tag)
-                level += 1
+                print("stop2")
+                print(text)
+                break
+        elif status == "off":
+            if i == "<":
+                text += part
+                level -= 1
+                text += "\n"
+                text += " " * indent * level
+                part = "<"
+                status = "ready"
+                tag = ""
             else:
-                tag += i
+                part += i
         print(f"== {i} ==")
         print(status)
         print(tag)
         print(level)
+        print(tag_list)
+        print(f"part = {part}")
+        print(text)
+        stop = input()
+        if stop == "q": break
 
 
         # if i == "<":
