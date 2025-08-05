@@ -1,7 +1,19 @@
 """
 sistem yang ada mirip seperti sistem first in last out
-[ ] Membuat tulisan menjadi perline
+[v] Membuat tulisan menjadi perline => program belum mengidentifikasi perpindahan antara head, informasi, dan tail
+[ ] Membuat penyimpanan sementara kemudian menambahkan setelah menayara perpindahan antara head, informasi, dan tail
+[ ] Membuat tulisan memperhatikan setelahnya untuk menambahkan
+    - Head > Head => enter + indent bertambah (kecuali yang pertama)
+    - Head > Tail => enter + indent tetap
+    - Head > informasi => enter + indent bertambah
+    # - Informasi > Head => pass [proses selanjutnya]
+    - Informasi > Tail => enter + indent berkurang
+    - Tail > Head => enter + indent tetap
+    - Tail > Tail => enter + indent berkurang
+    #- Tail > informasi => pass [proses selanjutnya]
+[ ] Tidak memperhatikan tag yang berada di dalam tulisan
 """
+
 
 def debug(text):
     stop = input(f"{text}\n ")
@@ -27,15 +39,12 @@ def main():
     status = "s"
     tag_list = []
     text = ""
+    part = ""
     head = True
     info = False
     for i in test:
         if status == "s":
             if i == "<":
-
-                text += "\n"
-                if debug(text): break
-
                 status = "a"
             
             text += i
