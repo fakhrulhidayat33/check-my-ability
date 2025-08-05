@@ -96,12 +96,11 @@ def main():
             if i == "<":
                 status = "a"
 
-                text += "\n"
                 text += part
                 if info:
                     print("disini kan?")
                     text += "\n"
-                    info = False
+
                 if debug(text): break
                 
                 part = i
@@ -109,10 +108,6 @@ def main():
             else:
                 info = True
                 part += i
-                # print("masukkah?")
-                if part == "One Line":
-                    print("masuk kaka")
-                    input()
 
     print("===============")
     print(text)
