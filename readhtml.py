@@ -1,7 +1,15 @@
 """
 sistem yang ada mirip seperti sistem first in last out
-[v] menambahkan 
+[ ] Membuat tulisan menjadi perline
 """
+
+def debug(text):
+    stop = input(f"{text}\n ")
+    print("***********")
+    if stop == "q":
+        return True
+    return False
+
 test = "<!DOCTYPE html><html><head><title>One Line</title></head><body><h1>Hello World</h1></body></html>"
 
 indent = 4
@@ -14,98 +22,81 @@ hide = ["br", "hr", "img", "input", "meta", "link", "source", "area", "col", "em
 forget = ["strong", "b", "em", "u", "q", "a", "small", "sup", "sub", "b", "ins", "del", "span", "abbr", "cite"]
 text = ""
 start = False
-# status ada A, B, C, D, E, F, G
-# status ready untuk pemeriksaan tag
-# status set untuk memasukkan parameter tag
-# status go untuk memasukkan konten
-delete = False
-status = "go"
-tag = None
-part = ""
-for i in test:
-    if start:
-        if status == "go":
-            part = i
+# status ada A, B, C, D, E
+def main():
+    status = "s"
+    tag_list = []
+    text = ""
+    head = True
+    info = False
+    for i in test:
+        if status == "s":
             if i == "<":
-                status = "ready"
-                tag = ""
-            else:
-                status = "off"
-        elif status == "ready":
-            part += i
-            if i == "/":
-                if delete:
-                    level -= 1
-                else:
-                    delete = True
-            elif i == " ":
-                delete = False
-                status = "set"
-                tag_list.append(tag)
-            elif i == ">":
-                status = "go"
-                text += part # benar
-                text += "\n" # benar
-                if delete:
-                    tag_list.pop()
-                    # assert tag == tag_list.pop(), f"seharusnya tag yang dikeluarkan sama dengan tag yang sedang diproses\n{text}"
-                    # tag_list.pop()
-                else:
-                    tag_list.append(tag)
-                    tag = ""
-                    level += 1
-                text += " " * indent * level
-                part = ""
-                # print("stop1")
-                # print(text)
-                # break
-            else:
-                tag += i
+
+                text += "\n"
+                if debug(text): break
+
+                status = "a"
             
-        elif status == "set":
-            part += i
-            if i == ">":
-                status = "go"
-                if tag in forget:
-                    pass
-                elif tag in hide:
-                    print("masukkah?")
-                else:
-                    level += 1
-                text += part
-                text += "\n"
-                text += " " * indent * level
-                print("stop2")
-                print(text)
-                break
-        elif status == "off":
-            if i == "<":
-                text += part
-                level -= 1
-                text += "\n"
-                text += " " * indent * level
-                part = "<"
-                status = "ready"
-                tag = ""
+            text += i
+
+        elif status == "a":
+            if i == "/":
+                head = False
+                status = "c"
             else:
-                part += i
-        print(f"== {i} ==")
-        print(status)
-        print(tag)
-        print(level)
-        print(tag_list)
-        print(f"part = {part}")
-        print(text)
-        stop = input()
-        if stop == "q": break
+                head = True
+                status = "b"
+            
+            text += i
 
+        elif status == "b":
+            if i == " ":
+                status = "d"
 
-        # if i == "<":
-        #     text += "\n"
-        # elif i == "baka":
-        #     first += i
-    else:
-        text += i
-        if i == ">":
-            start = True
-            text += "\n"
+                text += i
+
+            elif i == ">":
+                status = "e"
+                text += i
+                text += "\n"
+                if debug(text): break
+                
+            else:
+                text += i
+
+        elif status == "c":
+            text += i
+
+            status = "b"
+        elif status == "d":
+            if i == ">":
+                status = "e"
+
+                text += i
+                text += "\n"
+                stop = input(f"{text}\n ")
+                if debug(text): break
+
+            else:
+                text += i
+        elif status == "e":
+            if i == "<":
+                status = "a"
+
+                text += "\n"
+                if debug(text): break
+                
+                text += i
+                info = False
+            else:
+                info = True
+                text += i
+
+    print("===============")
+    print(text)
+    return text
+if __name__ == "__main__":
+    main()
+    with open("test.txt", "w") as f:
+        f.write(text)
