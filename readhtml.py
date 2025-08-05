@@ -1,7 +1,7 @@
 """
 sistem yang ada mirip seperti sistem first in last out
 [v] Membuat tulisan menjadi perline => program belum mengidentifikasi perpindahan antara head, informasi, dan tail
-[ ] Membuat penyimpanan sementara kemudian menambahkan setelah menayara perpindahan antara head, informasi, dan tail
+[v] Membuat penyimpanan sementara kemudian menambahkan setelah menayara perpindahan antara head, informasi, dan tail
 [ ] Membuat tulisan memperhatikan setelahnya untuk menambahkan
     - Head > Head => enter + indent bertambah (kecuali yang pertama)
     - Head > Tail => enter + indent tetap
@@ -47,7 +47,7 @@ def main():
             if i == "<":
                 status = "a"
             
-            text += i
+            part += i
 
         elif status == "a":
             if i == "/":
@@ -57,50 +57,62 @@ def main():
                 head = True
                 status = "b"
             
-            text += i
+            part += i
 
         elif status == "b":
             if i == " ":
                 status = "d"
 
-                text += i
+                part += i
 
             elif i == ">":
                 status = "e"
-                text += i
+
+                text += part + i
                 text += "\n"
+                part = ""
                 if debug(text): break
                 
             else:
-                text += i
+                part += i
 
         elif status == "c":
-            text += i
+            part += i
 
             status = "b"
         elif status == "d":
             if i == ">":
                 status = "e"
 
-                text += i
+                text += part + i
                 text += "\n"
+                part = ""
                 stop = input(f"{text}\n ")
                 if debug(text): break
 
             else:
-                text += i
+                part += i
         elif status == "e":
             if i == "<":
                 status = "a"
 
                 text += "\n"
+                text += part
+                if info:
+                    print("disini kan?")
+                    text += "\n"
+                    info = False
                 if debug(text): break
                 
-                text += i
+                part = i
                 info = False
             else:
                 info = True
-                text += i
+                part += i
+                # print("masukkah?")
+                if part == "One Line":
+                    print("masuk kaka")
+                    input()
 
     print("===============")
     print(text)
