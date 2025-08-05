@@ -3,3 +3,4 @@ data/*
 *.csv
 test_csv.py
 example*.html
+search*.py
